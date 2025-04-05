@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dance Workouts - Radiant</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .dance-hero {
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+          url("media/pattern.jpg");
+        background-size: fit;
+        background-position: center;
+        color: white;
+        text-align: center;
+        padding: 8rem 2rem;
+      }
+
+      .dance-categories {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        padding: 2rem;
+      }
+
+      .dance-card {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+
+      .dance-card:hover {
+        transform: translateY(-10px);
+      }
+
+      .dance-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: fit;
+      }
+
+      .dance-info {
+        padding: 1.5rem;
+      }
+
+      .difficulty {
+        display: inline-block;
+        padding: 0.3rem 0.8rem;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+      }
+
+      .beginner {
+        background: #4caf50;
+        color: white;
+      }
+      .intermediate {
+        background: #ffc107;
+        color: #333;
+      }
+      .advanced {
+        background: #f44336;
+        color: white;
+      }
+
+      .dance-stats {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 1rem;
+        color: #666;
+        font-size: 0.9rem;
+      }
+      .benefits-section {
+        padding: 5rem 2rem;
+        text-align: center;
+        background: linear-gradient(135deg, #fff5f5 0%, #f9f9f9 100%);
+      }
+
+      .benefits-section h2 {
+        font-size: 2.2rem;
+        color: #333;
+        margin-bottom: 3rem;
+        position: relative;
+        display: inline-block;
+      }
+
+      .benefits-section h2::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background: linear-gradient(90deg, #ff6b6b, #ff8e53);
+      }
+
+      .benefits-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2.5rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .benefit-card {
+        background: white;
+        padding: 2.5rem 2rem;
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+        border: 1px solid rgba(255, 107, 107, 0.1);
+      }
+
+      .benefit-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 8px 25px rgba(255, 107, 107, 0.15);
+      }
+
+      .benefit-icon {
+        font-size: 3rem;
+        margin-bottom: 1.5rem;
+        display: inline-block;
+        background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .benefit-card h3 {
+        font-size: 1.4rem;
+        color: #333;
+        margin-bottom: 1rem;
+        font-weight: 600;
+      }
+
+      .benefit-card p {
+        color: #666;
+        line-height: 1.6;
+        font-size: 1rem;
+      }
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(5px);
+        overflow-y: auto;
+      }
+
+      .modal-content {
+        background-color: white;
+        margin: 5% auto;
+        padding: 2rem;
+        border-radius: 15px;
+        width: 90%;
+        max-width: 800px;
+        box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+        position: relative;
+        animation: modalFadeIn 0.3s ease-out;
+      }
+
+      @keyframes modalFadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(-50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .close-modal {
+        position: absolute;
+        right: 25px;
+        top: 15px;
+        color: #aaa;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: color 0.3s;
+      }
+
+      .close-modal:hover {
+        color: #ff6b6b;
+      }
+
+      .modal-footer {
+        display: flex;
+        justify-content: flex-end;
+        gap: 1rem;
+        margin-top: 1.5rem;
+      }
+
+      .secondary {
+        background-color: #f1f1f1;
+        color: #333;
+      }
+
+      .video-container {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+        margin: 1.5rem 0;
+        border-radius: 8px;
+        background: #000;
+      }
+
+      .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+
+      @media (max-width: 768px) {
+        .modal-content {
+          width: 95%;
+          margin: 10% auto;
+          padding: 1.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">Radiant</div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="workouts.html">Workouts</a></li>
+          <li><a href="index.html#about">About</a></li>
+        </ul>
+        <a href="membership.html" class="cta-button">Join Now</a>
+      </nav>
+    </header>
+
+    <section class="dance-hero">
+      <h1>Energize Your Routine with Dance</h1>
+      <p>
+        Burn calories, boost mood, and improve coordination with our dance
+        programs
+      </p>
+      <a href="#dance-programs" class="cta-button">Explore Styles</a>
+    </section>
+
+    <section id="dance-programs" class="dance-categories">
+      <div class="dance-card">
+        <img src="media/zumba.jpg" alt="Zumba Class" />
+        <div class="dance-info">
+          <span class="difficulty beginner">Beginner Friendly</span>
+          <h3>Zumba Fitness</h3>
+          <p>
+            Latin-inspired dance workout that combines cardio and muscle
+            conditioning
+          </p>
+          <div class="dance-stats">
+            <span>🔥 400-600 cal/hr</span>
+            <span>⏱️ 45-60 min</span>
+          </div><br>
+          <a href="#" class="cta-button" data-dance-type = "zumba">Start Routine</a>
+        </div>
+      </div>
+
+      <div class="dance-card">
+        <img src="media/hiphop.jpg" alt="Hip Hop Dance" />
+        <div class="dance-info">
+          <span class="difficulty intermediate">Intermediate</span>
+          <h3>Hip Hop Groove</h3>
+          <p>Urban dance styles that improve rhythm and body coordination</p>
+          <div class="dance-stats">
+            <span>🔥 350-500 cal/hr</span>
+            <span>⏱️ 30-45 min</span>
+          </div><br>
+          <a href="#" class="cta-button" data-dance-type = "hiphop">Start Routine</a>
+        </div>
+      </div>
+
+      <div class="dance-card">
+        <img src="media/ballet.jpg" alt="Ballet Fitness" />
+        <div class="dance-info">
+          <span class="difficulty advanced">Advanced</span>
+          <h3>Ballet Fit</h3>
+          <p>Combine ballet techniques with fitness for long, lean muscles</p>
+          <div class="dance-stats">
+            <span>🔥 300-450 cal/hr</span>
+            <span>⏱️ 45-60 min</span>
+          </div><br>
+          <a href="#" class="cta-button" data-dance-type = "ballet">Start Routine</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="benefits-section">
+      <h2>Why Dance with Radiant?</h2>
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon">💃</div>
+          <h3>Full-Body Workout</h3>
+          <p>Engages all muscle groups while improving cardiovascular health</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">🧠</div>
+          <h3>Mental Boost</h3>
+          <p>Reduces stress and improves cognitive function through movement</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">🔄</div>
+          <h3>Progress Tracking</h3>
+          <p>Monitor your improvements in rhythm, flexibility, and endurance</p>
+        </div>
+      </div>
+    </section>
+
+    <div id="dance-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h3 id="modal-title">Dance Routine</h3>
+        <div class="video-container">
+          <iframe
+            id="modal-video"
+            width="560"
+            height="315"
+            frameborder="0"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div class="modal-footer">
+          <button class="cta-button">Save Routine</button>
+          <button class="cta-button secondary">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const dancePrograms = {
+        zumba: {
+          title: "Zumba Fitness Routine",
+          videoId: "urHnJF7wfRA"
+        },
+        hiphop: {
+          title: "Hip Hop Groove Tutorial",
+          videoId: "QPFyyKqFi4k"
+        },
+        ballet: {
+          title: "Ballet Fit Fundamentals",
+          videoId: "FWfew6Q7Xzo"
+        }
+      };
+    
+      document.addEventListener('DOMContentLoaded', function() {
+        const modal = document.getElementById('dance-modal');
+        const modalTitle = document.getElementById('modal-title');
+        const modalVideo = document.getElementById('modal-video');
+        const closeBtn = document.querySelector('.close-modal');
+        const closeSecondary = document.querySelector('.secondary');
+        const startButtons = document.querySelectorAll('[data-dance-type]');
+    
+        startButtons.forEach(button => {
+          button.addEventListener('click', function(e) {
+            e.preventDefault();
+            const danceType = this.dataset.danceType;
+            const program = dancePrograms[danceType];
+            
+            modalTitle.textContent = program.title;
+            modalVideo.src = `https://www.youtube.com/embed/${program.videoId}`;
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+          });
+        });
+    
+        function closeModal() {
+          modal.style.display = 'none';
+          modalVideo.src = '';
+          document.body.style.overflow = 'auto';
+        }
+    
+        closeBtn.addEventListener('click', closeModal);
+        closeSecondary.addEventListener('click', closeModal);
+    
+        window.addEventListener('click', function(e) {
+          if (e.target === modal) {
+            closeModal();
+          }
+        });
+      });
+    </script>
+
+    <footer>
+      <p>Sustainable code, sustainable planet 🌱</p>
+    </footer>
+  </body>
+</html>

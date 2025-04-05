@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gym Workouts - Radiant</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Radiant</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="workouts.html">Workouts</a></li>
+        <li><a href="index.html#about">About</a></li>
+      </ul>
+      <a href="membership.html" class="cta-button">Join Now</a>
+    </nav>
+  </header>
+
+  <section class="bmi-calculator">
+    <h2>BMI Calculator</h2>
+    <p>Enter your weight and height to calculate your BMI and get personalized workout recommendations.</p>
+    <form id="bmiForm">
+      <label for="weight">Weight (kg):</label>
+      <input type="number" id="weight" name="weight" required>
+      <label for="height">Height (cm):</label>
+      <input type="number" id="height" name="height" required>
+      <button type="submit" class="cta-button">Calculate BMI</button>
+    </form>
+    <div id="bmiResult"></div>
+  </section>
+
+  <div class="main-content">
+    <aside id="recommendedMenu">
+      <h2>Recommended Exercises</h2>
+      <ul id="recommendedList"></ul>
+    </aside>
+
+    <section class="gym-workouts">
+      <h1>Gym Workouts</h1>
+      <p>Explore our comprehensive guide to gym exercises, categorized by muscle groups. Each exercise includes a video tutorial and step-by-step instructions.</p>
+
+      <div class="exercise-category" id="bench-press">
+        <h2>Chest Exercises</h2>
+        <div class="exercise-card">
+          <h3>Bench Press</h3>
+          <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/4Y2ZdHCOXok" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <p><strong>Instructions:</strong></p>
+          <ol style="list-style-type: lower-roman;">
+            <li>Lie flat on a bench with your feet on the ground.</li>
+            <li>Grip the barbell slightly wider than shoulder-width apart.</li>
+            <li>Lower the bar to your chest, then press it back up.</li>
+          </ol>
+        </div>
+
+        <div class="exercise-card" id="incline-dumbbell-press">
+          <h3>Incline Dumbbell Press</h3>
+          <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/8iPEnn-ltC8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <p><strong>Instructions:</strong></p>
+          <ol style="list-style-type: lower-roman;">
+            <li>Set the bench to a 30-45 degree angle.</li>
+            <li>Hold dumbbells at shoulder height with palms facing forward.</li>
+            <li>Press the dumbbells upward until your arms are fully extended.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="exercise-category" id="deadlift">
+        <h2>Back Exercises</h2>
+        <div class="exercise-card">
+          <h3>Deadlift</h3>
+          <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/op9kVnSso6Q" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <p><strong>Instructions:</strong></p>
+          <ol style="list-style-type: lower-roman;">
+            <li>Stand with your feet hip-width apart and the barbell over your midfoot.</li>
+            <li>Bend at the hips and knees to grip the barbell.</li>
+            <li>Lift the bar by extending your hips and knees.</li>
+          </ol>
+        </div>
+
+        <div class="exercise-card" id="pull-ups">
+          <h3>Pull-Ups</h3>
+          <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/eGo4IYlbE5g" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <p><strong>Instructions:</strong></p>
+          <ol style="list-style-type: lower-roman;">
+            <li>Grip the pull-up bar with your palms facing away.</li>
+            <li>Hang with your arms fully extended.</li>
+            <li>Pull yourself up until your chin is above the bar.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="exercise-category" id="squats">
+        <h2>Leg Exercises</h2>
+        <div class="exercise-card">
+          <h3>Squats</h3>
+          <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/Dy28eq2PjcM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <p><strong>Instructions:</strong></p>
+          <ol style="list-style-type: lower-roman;">
+            <li>Stand with your feet shoulder-width apart.</li>
+            <li>Lower your body by bending your knees and hips.</li>
+            <li>Return to the starting position by pushing through your heels.</li>
+          </ol>
+        </div>
+
+        <div class="exercise-card" id="leg-press">
+          <h3>Leg Press</h3>
+          <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/IZxyjW7MPJQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <p><strong>Instructions:</strong></p>
+          <ol style="list-style-type: lower-roman;">
+            <li>Sit on the leg press machine with your feet on the platform.</li>
+            <li>Push the platform away by extending your legs.</li>
+            <li>Slowly return to the starting position.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="exercise-category" id="bicep-curls">
+        <h2>Arm Exercises</h2>
+        <div class="exercise-card">
+          <h3>Bicep Curls</h3>
+          <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/ykJmrZ5v0Oo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <p><strong>Instructions:</strong></p>
+          <ol style="list-style-type: lower-roman;">
+            <li>Hold a dumbbell in each hand with your palms facing forward.</li>
+            <li>Curl the weights while keeping your elbows close to your body.</li>
+            <li>Lower the weights back to the starting position.</li>
+          </ol>
+        </div>
+
+        <div class="exercise-card" id="tricep-dips">
+          <h3>Tricep Dips</h3>
+          <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/6kALZikXxLc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <p><strong>Instructions:</strong></p>
+          <ol style="list-style-type: lower-roman;">
+            <li>Place your hands on parallel bars with your arms straight.</li>
+            <li>Lower your body by bending your elbows.</li>
+            <li>Push yourself back up to the starting position.</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <p>Sustainable code, sustainable planet 🌱</p>
+  </footer>
+
+  <script>
+    document.getElementById('bmiForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const weight = parseFloat(document.getElementById('weight').value);
+      const height = parseFloat(document.getElementById('height').value) / 100;
+
+      const bmi = (weight / (height * height)).toFixed(2);
+
+      const bmiResult = document.getElementById('bmiResult');
+      bmiResult.innerHTML = <p>Your BMI is: <strong>${bmi}</strong>(Healthy Range : 18.5 - 24.9)</p>;
+      if (bmi < 18.5) {
+        bmiResult.innerHTML += '<p>You are underweight. Consider increasing your calorie intake.</p>';
+      } else if (bmi >= 18.5 && bmi <= 24.9) {
+        bmiResult.innerHTML += '<p>You are within a healthy weight range. Keep up the good work!</p>';
+      } else if (bmi >= 25 && bmi <= 29.9) {
+        bmiResult.innerHTML += '<p>You are overweight. Consider reducing your calorie intake.</p>';
+      } else {
+        bmiResult.innerHTML += '<p>You are obese. Consider consulting a healthcare professional.</p>';
+      }
+
+      const recommendedList = document.getElementById('recommendedList');
+      let exercises = [];
+      if (bmi < 18.5) {
+        exercises = [
+          { name: 'Bench Press', id: 'bench-press' },
+          { name: 'Deadlifts', id: 'deadlift' },
+          { name: 'Squats', id: 'squats' }
+        ];
+      } else if (bmi >= 18.5 && bmi <= 24.9) {
+        exercises = [
+          { name: 'Pull-Ups', id: 'pull-ups' },
+          { name: 'Incline Dumbbell Press', id: 'incline-dumbbell-press' },
+          { name: 'Leg Press', id: 'leg-press' }
+        ];
+      } else if (bmi >= 25 && bmi <= 29.9) {
+        exercises = [
+          { name: 'Running', id: 'running' },
+          { name: 'Cycling', id: 'cycling' },
+          { name: 'HIIT Workouts', id: 'hiit' }
+        ];
+      } else {
+        exercises = [
+          { name: 'Walking', id: 'walking' },
+          { name: 'Swimming', id: 'swimming' },
+          { name: 'Yoga', id: 'yoga' }
+        ];
+      }
+
+      recommendedList.innerHTML = exercises.map(exercise => 
+        <li><a href="#${exercise.id}" class="exercise-link">${exercise.name}</a></li>
+      ).join('');
+
+      document.querySelectorAll('.exercise-link').forEach(link => {
+        link.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          target.scrollIntoView({ behavior: 'smooth' });
+        });
+      });
+    });
+  </script>
+</body>
+</html>

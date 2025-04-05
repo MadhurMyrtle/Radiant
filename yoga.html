@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yoga Workouts - Radiant</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Radiant</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="workouts.html">Workouts</a></li>
+        <li><a href="index.html#about">About</a></li>
+      </ul>
+      <a href="membership.html" class="cta-button">Join Now</a>
+    </nav>
+  </header>
+
+  <section class="bmi-calculator">
+    <h2>BMI Calculator</h2>
+    <p>Enter your weight and height to calculate your BMI and get personalized workout recommendations.</p>
+    <form id="bmiForm">
+      <label for="weight">Weight (kg):</label>
+      <input type="number" id="weight" name="weight" required>
+      <label for="height">Height (cm):</label>
+      <input type="number" id="height" name="height" required>
+      <button type="submit" class="cta-button">Calculate BMI</button>
+    </form>
+    <div id="bmiResult"></div>
+  </section>
+
+  <div class="main-content">
+    <aside id="recommendedMenu">
+      <h2>Recommended Exercises</h2>
+      <ul id="recommendedList"></ul>
+    </aside>
+
+    <section class="yoga-workouts">
+      <h1>Yoga Workouts</h1>
+      <p>Explore our comprehensive guide to yoga exercises, designed to improve flexibility, mindfulness, and overall well-being.</p>
+
+      <div class="exercise-category" id="sun-salutation">
+        <h2>Sun Salutation</h2>
+        <div class="exercise-card">
+          <h3>Sun Salutation</h3>
+          <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/BgdJzqfavHI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <p><strong>Instructions:</strong></p>
+          <ol style="list-style-type: lower-roman;">
+            <li>Start in Mountain Pose (Tadasana).</li>
+            <li>Raise your arms overhead and arch back into Upward Salute (Urdhva Hastasana).</li>
+            <li>Fold forward into Standing Forward Bend (Uttanasana).</li>
+            <li>Step back into Plank Pose, then lower into Four-Limbed Staff Pose (Chaturanga Dandasana).</li>
+            <li>Lift into Upward-Facing Dog (Urdhva Mukha Svanasana), then transition to Downward-Facing Dog (Adho Mukha Svanasana).</li>
+            <li>Step forward into Standing Forward Bend, then return to Mountain Pose.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="exercise-category" id="warrior-pose">
+        <h2>Warrior Pose</h2>
+        <div class="exercise-card">
+          <h3>Warrior I (Virabhadrasana I)</h3>
+          <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/kkGY3xBnaGc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <p><strong>Instructions:</strong></p>
+          <ol style="list-style-type: lower-roman;">
+            <li>Start in Mountain Pose (Tadasana).</li>
+            <li>Step one foot back, keeping the front knee bent at 90 degrees.</li>
+            <li>Square your hips forward and raise your arms overhead.</li>
+            <li>Hold the pose for 30 seconds to 1 minute, then switch sides.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="exercise-category" id="tree-pose">
+        <h2>Tree Pose</h2>
+        <div class="exercise-card">
+          <h3>Tree Pose (Vrksasana)</h3>
+          <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/Fr5kiIygm0c" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <p><strong>Instructions:</strong></p>
+          <ol style="list-style-type: lower-roman;">
+            <li>Start in Mountain Pose (Tadasana).</li>
+            <li>Shift your weight onto one foot and place the sole of the other foot on your inner thigh or calf.</li>
+            <li>Bring your hands to your heart or raise them overhead.</li>
+            <li>Hold the pose for 30 seconds to 1 minute, then switch sides.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="exercise-category" id="downward-dog">
+        <h2>Downward Dog</h2>
+        <div class="exercise-card">
+          <h3>Downward-Facing Dog (Adho Mukha Svanasana)</h3>
+          <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/EC7RGJ975iM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <p><strong>Instructions:</strong></p>
+          <ol style="list-style-type: lower-roman;">
+            <li>Start on your hands and knees in Tabletop Pose.</li>
+            <li>Lift your hips up and back, straightening your legs and forming an inverted V shape.</li>
+            <li>Keep your hands shoulder-width apart and your feet hip-width apart.</li>
+            <li>Hold the pose for 1-3 minutes, focusing on your breath.</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <p>Sustainable code, sustainable planet 🌱</p>
+  </footer>
+
+  <script>
+    document.getElementById('bmiForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const weight = parseFloat(document.getElementById('weight').value);
+      const height = parseFloat(document.getElementById('height').value) / 100;
+
+      const bmi = (weight / (height * height)).toFixed(2);
+
+      const bmiResult = document.getElementById('bmiResult');
+      bmiResult.innerHTML = `<p>Your BMI is: <strong>${bmi}</strong></p>`;
+
+      const recommendedList = document.getElementById('recommendedList');
+      let exercises = [];
+      if (bmi < 18.5) {
+        exercises = [
+          { name: 'Sun Salutation', id: 'sun-salutation' },
+          { name: 'Warrior Pose', id: 'warrior-pose' },
+          { name: 'Tree Pose', id: 'tree-pose' }
+        ];
+      } else if (bmi >= 18.5 && bmi <= 24.9) {
+        exercises = [
+          { name: 'Downward Dog', id: 'downward-dog' },
+          { name: 'Warrior Pose', id: 'warrior-pose' },
+          { name: 'Tree Pose', id: 'tree-pose' }
+        ];
+      } else if (bmi >= 25 && bmi <= 29.9) {
+        exercises = [
+          { name: 'Sun Salutation', id: 'sun-salutation' },
+          { name: 'Downward Dog', id: 'downward-dog' },
+          { name: 'Warrior Pose', id: 'warrior-pose' }
+        ];
+      } else {
+        exercises = [
+          { name: 'Tree Pose', id: 'tree-pose' },
+          { name: 'Warrior Pose', id: 'warrior-pose' },
+          { name: 'Downward Dog', id: 'downward-dog' }
+        ];
+      }
+
+      recommendedList.innerHTML = exercises.map(exercise => `
+        <li><a href="#${exercise.id}" class="exercise-link">${exercise.name}</a></li>
+      `).join('');
+
+      document.querySelectorAll('.exercise-link').forEach(link => {
+        link.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          target.scrollIntoView({ behavior: 'smooth' });
+        });
+      });
+    });
+  </script>
+</body>
+</html>

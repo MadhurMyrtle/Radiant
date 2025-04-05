@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diet and Calorie Chart Planner - Radiant</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Radiant</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="workouts.html">Workouts</a></li>
+        <li><a href="index.html#about">About</a></li>
+      </ul>
+      <a href="membership.html" class="cta-button">Join Now</a>
+    </nav>
+  </header>
+
+  <section class="diet-planner">
+    <h2>Diet and Calorie Chart Planner</h2>
+    <p>Select food items to create your daily diet plan and track your calorie and nutrient intake.</p>
+    <div class="food-selection">
+      <label for="searchFood">Search Food:</label>
+      <input type="text" id="searchFood" placeholder="Type the first 3-4 letters of the food item">
+      <label for="foodItems">Select Food Items:</label>
+      <select id="foodItems" multiple>
+      </select>
+      <button id="addFood" class="cta-button">Add to Diet</button>
+    </div>
+    <div class="diet-summary">
+      <h3>Your Diet Summary</h3>
+      <table id="dietTable">
+        <thead>
+          <tr>
+            <th>Food Item</th>
+            <th>Calories (kcal)</th>
+            <th>Protein (g)</th>
+            <th>Carbs (g)</th>
+            <th>Fat (g)</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+      <div id="totalSummary">
+        <p><strong>Total Calories:</strong> <span id="totalCalories">0</span> kcal</p>
+        <p><strong>Total Protein:</strong> <span id="totalProtein">0</span> g</p>
+        <p><strong>Total Carbs:</strong> <span id="totalCarbs">0</span> g</p>
+        <p><strong>Total Fat:</strong> <span id="totalFat">0</span> g</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Sustainable code, sustainable planet 🌱</p>
+  </footer>
+
+  <script src="diet-planner.js"></script>
+</body>
+</html>

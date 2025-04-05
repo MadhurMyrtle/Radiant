@@ -1,0 +1,584 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+    color: #333;
+  }
+  
+  header {
+    background: linear-gradient(90deg, #ff6b6b, #ff4c4c);
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  nav .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  nav .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  nav .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  nav .nav-links a:hover {
+    color: #ffdd59;
+  }
+  
+  .cta-button {
+    background-color: white;
+    color: #ff6b6b;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    cursor: pointer;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    background-color: #ffdd59;
+    color: #333;
+  }
+  
+  /* Hero Section */
+.hero {
+  position: relative;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)) url(th.jpg);
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  overflow: hidden; /* Ensure the video doesn't overflow */
+  height: 100%; /* Make the hero section full viewport height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the video covers the entire hero section */
+  z-index: -1; /* Places the video behind the content */
+}
+
+.hero-content {
+  position: absolute;
+  padding-top: 40%;
+  z-index: 1; /* Ensures the content is above the video */
+  height: 100%;
+  width: 100%;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  font-weight: 300;
+}
+  
+  /* Workouts Section */
+  .workouts, .live-classes {
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+  
+  .workouts h2, .live-classes h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    font-weight: 600;
+  }
+  
+  .workout-cards, .live-class-cards {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  .card {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 15px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+  }
+  
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card img {
+    border-radius: 10px;
+    height: auto;
+    width: 150px; 
+    z-index: -1;
+  }
+  
+  .card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    z-index: 0;
+  }
+  
+  .card p {
+    font-size: 1rem;
+    color: #666;
+    z-index: 0;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 4rem;
+  }
+  /* Membership Section */
+.membership {
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+  
+  .membership h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    font-weight: 600;
+  }
+  
+  .membership-cards {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  .membership .card {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 15px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .membership .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .membership .card h3 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+  
+  .membership .card .price {
+    font-size: 1.5rem;
+    color: #ff6b6b;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+  }
+  
+  .membership .card ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2rem;
+  }
+  
+  .membership .card ul li {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+  }
+  
+  .membership .card .cta-button {
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .membership .card .cta-button:hover {
+    background-color: #ff4c4c;
+  }
+
+  /* Gym Workouts Section */
+.gym-workouts {
+  padding: 2rem;
+}
+
+.exercise-category {
+  margin-bottom: 3rem;
+}
+
+.exercise-category h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #ff6b6b;
+}
+
+.exercise-card {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 15px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  height: 0;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+/* BMI Calculator Section */
+.bmi-calculator {
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 2rem auto;
+  max-width: 600px;
+}
+
+.bmi-calculator h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #ff6b6b;
+}
+
+.bmi-calculator label {
+  display: block;
+  margin: 1rem 0 0.5rem;
+  font-weight: 600;
+}
+
+.bmi-calculator input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+.bmi-calculator button {
+  margin-top: 1.5rem;
+}
+
+#bmiResult {
+  margin-top: 1.5rem;
+  font-size: 1.2rem;
+}
+
+#exerciseRecommendation {
+  margin-top: 1.5rem;
+  font-size: 1rem;
+}
+
+#exerciseRecommendation ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+}
+
+#exerciseRecommendation ul li {
+  margin-bottom: 0.5rem;
+}
+
+/* BMI Modal (Gatekeeper) */
+.bmi-modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.bmi-modal-content {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 15px;
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.bmi-modal-content h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #ff6b6b;
+}
+
+.bmi-modal-content p {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.bmi-modal-content button {
+  margin-top: 1rem;
+}
+/* Main Content Layout */
+.main-content {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+/* Recommended Exercises Menu (Left Side) */
+#recommendedMenu {
+  width: 250px;
+  position: sticky;
+  top: 1rem;
+  align-self: flex-start;
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#recommendedMenu h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #ff6b6b;
+}
+
+#recommendedList {
+  list-style-type: none;
+  padding: 0;
+}
+
+#recommendedList li {
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Gym Workouts Section */
+.gym-workouts {
+  flex: 1;
+}
+
+/* Schedule Generator */
+.schedule-generator {
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 2rem auto;
+  max-width: 600px;
+}
+
+.schedule-generator h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #ff6b6b;
+}
+
+.schedule-generator .form-group {
+  margin-bottom: 1.5rem;
+}
+
+.schedule-generator label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.schedule-generator select,
+.schedule-generator input[type="time"] {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+/* Workout Schedule */
+.workout-schedule {
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 2rem auto;
+  max-width: 800px;
+}
+
+.workout-schedule h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #ff6b6b;
+}
+
+.workout-schedule table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.5rem;
+}
+
+.workout-schedule th,
+.workout-schedule td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.workout-schedule th {
+  background-color: #f9f9f9;
+  font-weight: 600;
+}
+
+.cta-button-schedule{
+  background-color: aqua;
+  color: #ff6b6b;
+  border: none;
+  padding: 0.5rem 1.5rem;
+  cursor: pointer;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.cta-button-schedule:hover {
+  background-color: #ffdd59;
+  color: #333;
+}
+
+
+/* Search Input */
+#searchFood {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+
+/* Diet Planner Section */
+.diet-planner {
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 2rem auto;
+  max-width: 800px;
+}
+
+.diet-planner h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #ff6b6b;
+}
+
+.food-selection {
+  margin-bottom: 2rem;
+}
+
+.food-selection label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.food-selection select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.diet-summary table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.5rem;
+}
+
+.diet-summary th,
+.diet-summary td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.diet-summary th {
+  background-color: #f9f9f9;
+  font-weight: 600;
+}
+
+.diet-summary button {
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.diet-summary button:hover {
+  background-color: #ff4c4c;
+}
+
+#totalSummary {
+  margin-top: 1.5rem;
+  font-size: 1.1rem;
+}
+
+#totalSummary p {
+  margin-bottom: 0.5rem;
+}

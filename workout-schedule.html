@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Workout Schedule - Radiant</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Radiant</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="workouts.html">Workouts</a></li>
+        <li><a href="index.html#about">About</a></li>
+      </ul>
+      <a href="membership.html" class="cta-button">Join Now</a>
+    </nav>
+  </header>
+
+  <section class="schedule-generator">
+    <h2>Create Your Workout Schedule</h2>
+    <p>Select your preferred exercise type, exercise, day, and time to generate a personalized workout schedule.</p>
+    <form id="scheduleForm">
+      <div class="form-group">
+        <label for="exerciseType">Select Exercise Type:</label>
+        <select id="exerciseType" name="exerciseType" required>
+          <option value="">-- Select Type --</option>
+          <option value="gym">Gym</option>
+          <option value="yoga">Yoga</option>
+          <option value="dance">Dance</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="exercise">Select Exercise:</label>
+        <select id="exercise" name="exercise" required disabled>
+          <option value="">-- Select Exercise --</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="day">Select Day:</label>
+        <select id="day" name="day" required>
+          <option value="Monday">Monday</option>
+          <option value="Tuesday">Tuesday</option>
+          <option value="Wednesday">Wednesday</option>
+          <option value="Thursday">Thursday</option>
+          <option value="Friday">Friday</option>
+          <option value="Saturday">Saturday</option>
+          <option value="Sunday">Sunday</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="time">Select Time:</label>
+        <input type="time" id="time" name="time" required>
+      </div>
+      <button type="submit" class="cta-button-schedule">Add to Schedule</button>
+    </form>
+  </section>
+
+  <section class="workout-schedule">
+    <h2>Your Workout Schedule</h2>
+    <p>Here's your personalized workout timetable. You can add or remove exercises as needed.</p>
+    <div id="scheduleTable">
+    </div>
+  </section>
+
+  <footer>
+    <p>Sustainable code, sustainable planet 🌱</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
